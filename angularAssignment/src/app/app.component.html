@@ -1,0 +1,40 @@
+<h1>ANGULAR ASSIGNMENT</h1>
+<!-- TABLE -->
+<table style="width: auto;">
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Hours worked</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr *ngFor="let emp of empWorkingHours; let i= index" id="empTable" [ngClass]="emp.TotalWorkingHours < 100 ? 'RedBG' : 'WhiteBG'">
+      <td>{{emp.EmployeeName}}</td>
+      <td>{{emp.TotalWorkingHours}}</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- PIE CHART -->
+<div style="width: 400px;">
+  <canvas
+  id="myChart"
+      baseChart
+      [type]="'pie'"
+      [datasets]="pieChartData"
+      [labels]="pieChartLabels"
+      [options]="pieChartOptions"
+      [legend]="true"
+      >
+  </canvas>
+</div>
+
+<!-- <div>
+  <canvas
+  baseChart
+  [options]="pieChartOptions"
+  ></canvas>    
+</div>  -->
+
